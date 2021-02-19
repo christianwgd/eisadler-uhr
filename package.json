@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"electron": "^7.1.1",
-		"electron-builder": "^21.2.0",
+		"electron-builder": "^22.9.1",
 		"np": "^7.4.0",
 		"webpack": "^5.23.0",
 		"xo": "^0.37.1"
