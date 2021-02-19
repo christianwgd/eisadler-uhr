@@ -1,7 +1,7 @@
 {
 	"name": "eisadler-uhr",
 	"productName": "Eisadler Uhr",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Uhr im Eisadler Dortmund Design",
 	"license": "MIT",
 	"repository": "https://github.com/christianwgd/eisadler-uhr",
@@ -42,7 +42,7 @@
 		]
 	},
 	"np": {
-		"publish": false,
+		"publish": true,
 		"releaseDraft": false
 	},
 	"build": {
