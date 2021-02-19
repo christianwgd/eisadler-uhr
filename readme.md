@@ -1,4 +1,5 @@
 [![Github All Releases](https://img.shields.io/github/downloads/christianwgd/eisadler-uhr/total.svg)]()
+https://badgen.net/badge/:subject/:status/:color?icon=github
 
 # Eisadler Uhr
 
