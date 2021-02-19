@@ -5,9 +5,7 @@ const {
 	is,
 	appMenu,
 	aboutMenuItem,
-	openUrlMenuItem,
-	openNewGitHubIssue,
-	debugInfo
+	openUrlMenuItem
 } = require('electron-util');
 const config = require('./config');
 
@@ -17,31 +15,13 @@ const showPreferences = () => {
 
 const helpSubmenu = [
 	openUrlMenuItem({
-		label: 'Website',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		label: 'Webseite',
+		url: 'https://eisadler.com'
 	}),
 	openUrlMenuItem({
 		label: 'Source Code',
 		url: 'https://github.com/sindresorhus/electron-boilerplate'
-	}),
-	{
-		label: 'Report an Issue…',
-		click() {
-			const body = `
-<!-- Please succinctly describe your issue and steps to reproduce it. -->
-
-
----
-
-${debugInfo()}`;
-
-			openNewGitHubIssue({
-				user: 'sindresorhus',
-				repo: 'electron-boilerplate',
-				body
-			});
-		}
-	}
+	})
 ];
 
 if (!is.macos) {
@@ -93,7 +73,7 @@ const debugSubmenu = [
 const macosTemplate = [
 	appMenu([
 		{
-			label: 'Preferences…',
+			label: 'Einstellungen…',
 			accelerator: 'Command+,',
 			click() {
 				showPreferences();
@@ -104,18 +84,12 @@ const macosTemplate = [
 		role: 'fileMenu',
 		submenu: [
 			{
-				label: 'Custom'
-			},
-			{
 				type: 'separator'
 			},
 			{
 				role: 'close'
 			}
 		]
-	},
-	{
-		role: 'editMenu'
 	},
 	{
 		role: 'viewMenu'
@@ -135,9 +109,6 @@ const otherTemplate = [
 		role: 'fileMenu',
 		submenu: [
 			{
-				label: 'Custom'
-			},
-			{
 				type: 'separator'
 			},
 			{
@@ -154,9 +125,6 @@ const otherTemplate = [
 				role: 'quit'
 			}
 		]
-	},
-	{
-		role: 'editMenu'
 	},
 	{
 		role: 'viewMenu'
