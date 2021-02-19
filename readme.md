@@ -1,3 +1,8 @@
+[![Github All Releases](https://img.shields.io/github/downloads/christianwgd/eisadler-uhr/total.svg)]()
+[![](https://badgen.net/badge/platform/macos/green?icon=apple)]()
+[![](https://badgen.net/badge/platform/windows/green?icon=windows)]()
+[![](https://badgen.net/badge/platform/linux/green?icon=linux)]()
+
 # Eisadler Uhr
 
 > Desktop App der Eisadler Uhr
