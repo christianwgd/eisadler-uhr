@@ -42,7 +42,7 @@
 		]
 	},
 	"np": {
-		"publish": true,
+		"publish": false,
 		"releaseDraft": false
 	},
 	"build": {
