@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/christianwgd/eisadler-uhr/total.svg)]()
+
 # Eisadler Uhr
 
 > Desktop App der Eisadler Uhr
