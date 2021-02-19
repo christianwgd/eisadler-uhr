@@ -45,7 +45,7 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.company.AppName",
+		"appId": "com.eisadler.uhr",
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true
