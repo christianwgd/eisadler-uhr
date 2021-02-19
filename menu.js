@@ -20,7 +20,7 @@ const helpSubmenu = [
 	}),
 	openUrlMenuItem({
 		label: 'Source Code',
-		url: 'https://github.com/sindresorhus/electron-boilerplate'
+		url: 'https://github.com/christianwgd/eisadler-uhr.git'
 	})
 ];
 
