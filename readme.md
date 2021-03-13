@@ -5,7 +5,7 @@
 
 # Eisadler Uhr
 
-> Desktop App der Eisadler Uhr
+Desktop App der Eisadler Uhr
 
 ## Install
 
