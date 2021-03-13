@@ -71,7 +71,11 @@
 				"AppImage",
 				"deb"
 			],
-			"category": "Network;Chat"
+			"category": "Utilities",
+			"icon": "build/icon.png"
+		},
+		"win": {
+			"icon": "build/icon.ico"
 		}
 	}
 }
