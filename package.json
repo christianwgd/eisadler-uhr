@@ -76,7 +76,7 @@
 			"desktop": {
 				"Name": "Eisadler Uhr",
 				"Icon": "/usr/share/icons/hicolor/0x0/apps/eisadler-uhr.png"
-			  }
+			}
 		},
 		"win": {
 			"icon": "build/icon.ico"
