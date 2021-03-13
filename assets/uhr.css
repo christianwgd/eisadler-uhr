@@ -145,8 +145,8 @@ section:after {
     height: 1vmin;
     width: 55vmin;
     background: transparent;
-    border-left: 7vmin solid silver;
-    border-right: 7vmin solid silver;
+    border-left: 7vmin solid #aaaaaa;
+    border-right: 7vmin solid #aaaaaa;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
