@@ -4,6 +4,11 @@
     font-display: swap;
   }
 
+ html {
+    width:100%;
+    background-color:rgba(0,0,0,0.1);
+}
+
 section {
     width: 80vmin;
     height: 80vmin;
@@ -19,6 +24,7 @@ section {
     position: relative;
     z-index: 1;
     background-image: url('eisadler-logo.svg');
+	background-color: #efefef;
     background-position: 47.5% 90%;
     background-size: contain;
     background-repeat: no-repeat;
