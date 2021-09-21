@@ -1,12 +1,11 @@
-'use strict';
-const path = require('path');
-const {app, BrowserWindow, Menu} = require('electron');
+import {app, BrowserWindow, Menu} from 'electron';
+import {join} from 'node:path';
 /// const {autoUpdater} = require('electron-updater');
-const {is} = require('electron-util');
-const unhandled = require('electron-unhandled');
-const debug = require('electron-debug');
-const contextMenu = require('electron-context-menu');
-const menu = require('./menu');
+import {is} from 'electron-util';
+import unhandled from 'electron-unhandled';
+import debug from 'electron-debug';
+import contextMenu from 'electron-context-menu';
+import menu from './menu.js';
 
 unhandled();
 debug();
@@ -29,6 +28,8 @@ app.setAppUserModelId('com.eisadler.uhr');
 // Prevent window from being garbage collected
 let mainWindow;
 
+const __dirname = new URL('.', import.meta.url).pathname;
+
 const createMainWindow = async () => {
 	const win = new BrowserWindow({
 		title: app.name,
@@ -36,8 +37,8 @@ const createMainWindow = async () => {
 		width: 600,
 		height: 400,
 		webPreferences: {
-			nodeIntegration: true
-		}
+			nodeIntegration: true,
+		},
 	});
 
 	win.on('ready-to-show', () => {
@@ -50,7 +51,7 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, 'index.html'));
+	await win.loadFile(join(__dirname, 'index.html'));
 
 	return win;
 };

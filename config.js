@@ -1,8 +1,7 @@
-'use strict';
-const Store = require('electron-store');
+import Store from 'electron-store';
 
-module.exports = new Store({
+export default new Store({
 	defaults: {
-		favoriteAnimal: 'o'
-	}
+		favoriteAnimal: 'o',
+	},
 });

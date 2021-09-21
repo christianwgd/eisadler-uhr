@@ -1,13 +1,7 @@
-'use strict';
-const path = require('path');
-const {app, Menu, shell} = require('electron');
-const {
-	is,
-	appMenu,
-	aboutMenuItem,
-	openUrlMenuItem
-} = require('electron-util');
-const config = require('./config');
+import {app, Menu, shell} from 'electron';
+import {join} from 'node:path';
+import {is, appMenu, aboutMenuItem, openUrlMenuItem} from 'electron-util';
+import {openInEditor, clear} from './config.js';
 
 const showPreferences = () => {
 	// Show the app's preferences here
@@ -16,23 +10,25 @@ const showPreferences = () => {
 const helpSubmenu = [
 	openUrlMenuItem({
 		label: 'Webseite',
-		url: 'https://eisadler.com'
+		url: 'https://eisadler.com',
 	}),
 	openUrlMenuItem({
 		label: 'Source Code',
-		url: 'https://github.com/christianwgd/eisadler-uhr.git'
-	})
+		url: 'https://github.com/christianwgd/eisadler-uhr.git',
+	}),
 ];
+
+const __dirname = new URL('.', import.meta.url).pathname;
 
 if (!is.macos) {
 	helpSubmenu.push(
 		{
-			type: 'separator'
+			type: 'separator',
 		},
 		aboutMenuItem({
-			icon: path.join(__dirname, 'static', 'icon.png'),
-			text: 'Created by Your Name'
-		})
+			icon: join(__dirname, 'static', 'icon.png'),
+			text: 'Created by Your Name',
+		}),
 	);
 }
 
@@ -40,25 +36,25 @@ const debugSubmenu = [
 	{
 		label: 'Show Settings',
 		click() {
-			config.openInEditor();
-		}
+			openInEditor();
+		},
 	},
 	{
 		label: 'Show App Data',
 		click() {
 			shell.openItem(app.getPath('userData'));
-		}
+		},
 	},
 	{
-		type: 'separator'
+		type: 'separator',
 	},
 	{
 		label: 'Delete Settings',
 		click() {
-			config.clear();
+			clear();
 			app.relaunch();
 			app.quit();
-		}
+		},
 	},
 	{
 		label: 'Delete App Data',
@@ -66,8 +62,8 @@ const debugSubmenu = [
 			shell.moveItemToTrash(app.getPath('userData'));
 			app.relaunch();
 			app.quit();
-		}
-	}
+		},
+	},
 ];
 
 const macosTemplate = [
@@ -77,30 +73,30 @@ const macosTemplate = [
 			accelerator: 'Command+,',
 			click() {
 				showPreferences();
-			}
-		}
+			},
+		},
 	]),
 	{
 		role: 'fileMenu',
 		submenu: [
 			{
-				type: 'separator'
+				type: 'separator',
 			},
 			{
-				role: 'close'
-			}
-		]
+				role: 'close',
+			},
+		],
 	},
 	{
-		role: 'viewMenu'
+		role: 'viewMenu',
 	},
 	{
-		role: 'windowMenu'
+		role: 'windowMenu',
 	},
 	{
 		role: 'help',
-		submenu: helpSubmenu
-	}
+		submenu: helpSubmenu,
+	},
 ];
 
 // Linux and Windows
@@ -109,30 +105,30 @@ const otherTemplate = [
 		role: 'fileMenu',
 		submenu: [
 			{
-				type: 'separator'
+				type: 'separator',
 			},
 			{
 				label: 'Settings',
 				accelerator: 'Control+,',
 				click() {
 					showPreferences();
-				}
+				},
 			},
 			{
-				type: 'separator'
+				type: 'separator',
 			},
 			{
-				role: 'quit'
-			}
-		]
+				role: 'quit',
+			},
+		],
 	},
 	{
-		role: 'viewMenu'
+		role: 'viewMenu',
 	},
 	{
 		role: 'help',
-		submenu: helpSubmenu
-	}
+		submenu: helpSubmenu,
+	},
 ];
 
 const template = process.platform === 'darwin' ? macosTemplate : otherTemplate;
@@ -140,8 +136,8 @@ const template = process.platform === 'darwin' ? macosTemplate : otherTemplate;
 if (is.development) {
 	template.push({
 		label: 'Debug',
-		submenu: debugSubmenu
+		submenu: debugSubmenu,
 	});
 }
 
-module.exports = Menu.buildFromTemplate(template);
+export default Menu.buildFromTemplate(template);

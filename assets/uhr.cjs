@@ -1,4 +1,5 @@
 const $ = require('jquery');
+
 $(document).ready(() => {
 	setInterval(() => {
 		const seconds = new Date().getSeconds();
