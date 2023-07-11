@@ -33,7 +33,7 @@
 		"electron-builder": "^24.2.1",
 		"electron-packager": "^15.4.0",
 		"np": "^7.4.0",
-		"webpack": "^5.23.0",
+		"webpack": "^5.76.0",
 		"xo": "^0.44.0"
 	},
 	"xo": {
