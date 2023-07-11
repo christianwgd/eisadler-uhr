@@ -29,10 +29,10 @@
 		"jquery": "^3.5.1"
 	},
 	"devDependencies": {
-		"electron": "^18.3.7",
+		"electron": "^25.2.0",
 		"electron-builder": "^24.2.1",
-		"electron-packager": "^15.4.0",
-		"np": "^7.4.0",
+		"electron-packager": "^17.1.1",
+		"np": "^8.0.4",
 		"webpack": "^5.23.0",
 		"xo": "^0.44.0"
 	},
